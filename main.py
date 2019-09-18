@@ -133,6 +133,8 @@ def getCookieId(username,password):
 def login(username,password):
     cookie = red.get("card_"+username)
     if cookie==None:
+        password = password.replace('X',"0")
+        password = password.replace('x',"0")
         cookie = getCookieId(username,password)
         print("获取到的cookie为:%s"%(cookie));
         if cookie != None:
